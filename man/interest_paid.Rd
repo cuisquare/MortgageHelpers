@@ -7,7 +7,7 @@
 interest_paid(rate, capital, term_months, month_num, month_overpay = 0)
 }
 \arguments{
-\item{rate}{double, the mortgage current rate (absolute value e.g. 1.5% means rate = 0.015)}
+\item{rate}{double, the mortgage current rate (absolute value e.g. 1.5\% means rate = 0.015)}
 
 \item{capital}{double, the mortgage remaining capital}
 
@@ -18,7 +18,7 @@ interest_paid(rate, capital, term_months, month_num, month_overpay = 0)
 \item{month_overpay}{integer, amount overpaid each month, defaults to 0}
 }
 \value{
-
+double interest paid over the mortgage duration
 }
 \description{
 interest_paid

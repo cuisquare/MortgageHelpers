@@ -7,7 +7,7 @@
 price_fixedterm(rate, capital, term_months, duration_years, fee = 0, rest = 12)
 }
 \arguments{
-\item{rate}{double, the mortgage current rate (absolute value e.g. 1.5% means rate = 0.015)}
+\item{rate}{double, the mortgage current rate (absolute value e.g. 1.5\% means rate = 0.015)}
 
 \item{capital}{double, the mortgage remaining capital}
 
@@ -20,8 +20,8 @@ price_fixedterm(rate, capital, term_months, duration_years, fee = 0, rest = 12)
 \item{rest}{integer, defaults to 12 for monthly payments}
 }
 \value{
-
+double price of fixed term
 }
 \description{
-calculated the price of a fixed term of a mortgage
+calculates the price of a fixed term of a mortgage
 }

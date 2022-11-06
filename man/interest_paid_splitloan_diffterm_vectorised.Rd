@@ -17,7 +17,11 @@ interest_paid_splitloan_diffterm_vectorised(
 )
 }
 \arguments{
-\item{rate}{vector double of length month_num, the mortgage current rate (absolute value e.g. 1.5% means rate = 0.015)}
+\item{rate}{vector double of length month_num, the mortgage current rate (absolute value e.g. 1.5\% means rate = 0.015)}
+
+\item{capital1}{double, the mortgage remaining capital1}
+
+\item{capital2}{double, the mortgage remaining capital2}
 
 \item{term_months1}{integer, number of months remaining to pay the 1st mortgage back}
 
@@ -31,8 +35,6 @@ interest_paid_splitloan_diffterm_vectorised(
 
 \item{keep_mp_base}{boolean, if TRUE (default) the based payments of a paid off loadn will be used
 towards the remaining loan.}
-
-\item{capital}{double, the mortgage remaining capital2}
 }
 \value{
 named list reflecting state of both mortgage, with members capital1, capital2, act_month1, act_month2, int_paid1, int_paid2, int_paid

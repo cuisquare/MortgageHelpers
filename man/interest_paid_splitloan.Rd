@@ -16,7 +16,11 @@ interest_paid_splitloan(
 )
 }
 \arguments{
-\item{rate}{double, the mortgage current rate (absolute value e.g. 1.5% means rate = 0.015)}
+\item{rate}{double, the mortgage current rate (absolute value e.g. 1.5\% means rate = 0.015)}
+
+\item{capital1}{double, the mortgage remaining capital1}
+
+\item{capital2}{double, the mortgage remaining capital2}
 
 \item{term_months}{integer, number of months remaining to pay the mortgage back}
 
@@ -27,11 +31,9 @@ interest_paid_splitloan(
 \item{perc_overpay1}{percentage of overpay dedicated to first loan}
 
 \item{perc_overpay2}{percentage of overpay dedicated to second loan}
-
-\item{capital}{double, the mortgage remaining capital2}
 }
 \value{
-
+double interest paid
 }
 \description{
 interest paid if the loan is split in two with same rate.

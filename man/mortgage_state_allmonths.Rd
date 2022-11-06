@@ -15,7 +15,7 @@ mortgage_state_allmonths(
 )
 }
 \arguments{
-\item{rate}{double, the mortgage current rate (absolute value e.g. 1.5% means rate = 0.015)}
+\item{rate}{double, the mortgage current rate (absolute value e.g. 1.5\% means rate = 0.015)}
 
 \item{capital}{double, the mortgage remaining capital}
 
@@ -31,7 +31,9 @@ hence 1:month_num (default value) will mean overpayment for the whole payment pe
 \item{reduce_term}{boolean, defaults to TRUE do overpayments reduce terms}
 }
 \value{
-
+dataframe with each observation being one month and
+variable including month, monthly_payment, overpayment, monthly_payment_tot, interest_paid,
+interest_paid_tot and capital
 }
 \description{
 shows state of mortgage as a dataframe with each observation being one month and

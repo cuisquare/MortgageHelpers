@@ -13,16 +13,19 @@ total_term_reduction_months(
 )
 }
 \arguments{
-\item{rate}{double, the mortgage current rate (absolute value e.g. 1.5% means rate = 0.015)}
+\item{rate}{double, the mortgage current rate (absolute value e.g. 1.5\% means rate = 0.015)}
 
 \item{capital}{double, the mortgage remaining capital}
 
 \item{term_months}{integer, number of months remaining to pay the mortgage back}
 
-\item{month_overpay}{integer, amount overpaid each month, defaults to 0_nums}
+\item{month_overpay}{integer, amount overpaid each month, defaults to 0}
+
+\item{month_overpay_nums}{vector, with index having non NA values will result in overpayment being applied for that month.
+hence 1:month_num (default value) will mean overpayment for the whole payment period considered}
 }
 \value{
-
+integer number of months removed from the mortgage duration
 }
 \description{
 number of months removed from the mortgage duration compared to the case

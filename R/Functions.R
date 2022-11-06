@@ -2,11 +2,11 @@
 #'
 #' @description Interest paid monthly considering current rate, capital and rest
 #'
-#' @param rate double, the mortgage current rate (absolute value e.g. 1.5% means rate = 0.015)
+#' @param rate double, the mortgage current rate (absolute value e.g. 1.5\% means rate = 0.015)
 #' @param capital double, the mortgage remaining capital
 #' @param rest integer, defaults to 12 for monthly payments
 #'
-#' @return
+#' @return double Interest paid monthly
 #' @export
 #'
 #' @examples monthly_interest_paid(100000,0.015)
@@ -18,12 +18,12 @@ monthly_interest_paid <- function(rate,capital,rest=12) {
 #'
 #' @description monthly payment for a classic mortgage
 #'
-#' @param rate double, the mortgage current rate (absolute value e.g. 1.5% means rate = 0.015)
+#' @param rate double, the mortgage current rate (absolute value e.g. 1.5\% means rate = 0.015)
 #' @param capital double, the mortgage remaining capital
 #' @param term_months integer, number of months remaining to pay the mortgage back integer, number of months remaining to pay the mortgage back
 #' @param rest integer, defaults to 12 for monthly payments
 #'
-#' @return
+#' @return double monthly payment
 #' @export
 #'
 monthly_payment <- function(rate, capital, term_months,rest=12) {
@@ -35,13 +35,13 @@ monthly_payment <- function(rate, capital, term_months,rest=12) {
 #'
 #' @description capital remaining after paying for month_num months
 #'
-#' @param rate double, the mortgage current rate (absolute value e.g. 1.5% means rate = 0.015)
+#' @param rate double, the mortgage current rate (absolute value e.g. 1.5\% means rate = 0.015)
 #' @param capital double, the mortgage remaining capital
 #' @param term_months integer, number of months remaining to pay the mortgage back
 #' @param month_num integer, duration of payment period, in months, payments equal those required to pay off mortgage without overpayments
 #' @param month_overpay integer, amount overpaid each month, defaults to 0
 #'
-#' @return
+#' @return double capital remaining after month_num
 #' @export
 #'
 capital_remaining <- function(rate,capital,term_months,month_num,month_overpay = 0) {
@@ -60,13 +60,13 @@ capital_remaining <- function(rate,capital,term_months,month_num,month_overpay =
 
 #' @title interest_paid
 #'
-#' @param rate double, the mortgage current rate (absolute value e.g. 1.5% means rate = 0.015)
+#' @param rate double, the mortgage current rate (absolute value e.g. 1.5\% means rate = 0.015)
 #' @param capital double, the mortgage remaining capital
 #' @param term_months integer, number of months remaining to pay the mortgage back
 #' @param month_num integer, duration of payment period, in months, payments equal those required to pay off mortgage without overpayments
 #' @param month_overpay integer, amount overpaid each month, defaults to 0
 #'
-#' @return
+#' @return double interest paid over the mortgage duration
 #' @export
 #'
 interest_paid <- function(rate,capital,term_months,month_num,month_overpay = 0) {
@@ -90,16 +90,16 @@ interest_paid <- function(rate,capital,term_months,month_num,month_overpay = 0) 
 #'
 #' @description interest paid if the loan is split in two with same rate.
 #'
-#' @param rate double, the mortgage current rate (absolute value e.g. 1.5% means rate = 0.015)
-#' @param capital double, the mortgage remaining capital1
-#' @param capital double, the mortgage remaining capital2
+#' @param rate double, the mortgage current rate (absolute value e.g. 1.5\% means rate = 0.015)
+#' @param capital1 double, the mortgage remaining capital1
+#' @param capital2 double, the mortgage remaining capital2
 #' @param term_months integer, number of months remaining to pay the mortgage back
 #' @param month_num integer, duration of payment period, in months, payments equal those required to pay off mortgage without overpayments
 #' @param month_overpay integer, amount overpaid each month, defaults to 0
 #' @param perc_overpay1 percentage of overpay dedicated to first loan
 #' @param perc_overpay2 percentage of overpay dedicated to second loan
 #'
-#' @return
+#' @return double interest paid
 #' @export
 #'
 interest_paid_splitloan <-  function(rate,
@@ -162,9 +162,9 @@ interest_paid_splitloan <-  function(rate,
 #'
 #' @description interest paid on two loans of same rate but different terms
 #'
-#' @param rate double, the mortgage current rate (absolute value e.g. 1.5% means rate = 0.015)
-#' @param capital double, the mortgage remaining capital1
-#' @param capital double, the mortgage remaining capital2
+#' @param rate double, the mortgage current rate (absolute value e.g. 1.5\% means rate = 0.015)
+#' @param capital1 double, the mortgage remaining capital1
+#' @param capital2 double, the mortgage remaining capital2
 #' @param term_months1 integer, number of months remaining to pay the 1st mortgage back
 #' @param term_months2 integer, number of months remaining to pay the 2nd mortgage back
 #' @param month_num integer, duration of payment period, in months, payments equal those required to pay off mortgage without overpayments
@@ -211,7 +211,7 @@ interest_paid_splitloan_diffterm <-  function(rate,
       capital1 <- capital1 - c_p1
       if (capital1 == 0) {
         warning(paste("capital1 reduced to zero at month number", month))
-        #since the first bit is paid off, we diverge 100% of overpayment to 2nd loan
+        #since the first bit is paid off, we diverge 100\% of overpayment to 2nd loan
         perc_overpay1 <- 0
         perc_overpay2 <- 1
         # m_p2 <- monthly_payment(rate, capital2, term_months2) + perc_overpay2 * month_overpay[month]
@@ -260,9 +260,9 @@ interest_paid_splitloan_diffterm <-  function(rate,
 #' (rate, month_overpay and perc_overpay1)
 #' can be varied through the term.
 #'
-#' @param rate vector double of length month_num, the mortgage current rate (absolute value e.g. 1.5% means rate = 0.015)
-#' @param capital double, the mortgage remaining capital1
-#' @param capital double, the mortgage remaining capital2
+#' @param rate vector double of length month_num, the mortgage current rate (absolute value e.g. 1.5\% means rate = 0.015)
+#' @param capital1 double, the mortgage remaining capital1
+#' @param capital2 double, the mortgage remaining capital2
 #' @param term_months1 integer, number of months remaining to pay the 1st mortgage back
 #' @param term_months2 integer, number of months remaining to pay the 2nd mortgage back
 #' @param month_num integer, duration of payment period, in months, payments equal those required to pay off mortgage without overpayments
@@ -337,7 +337,7 @@ interest_paid_splitloan_diffterm_vectorised <-  function(rate = rep(0.0154,month
       capital1 <- capital1 - c_p1
       if (capital1 == 0) {
         warning(paste("capital1 reduced to zero at month number", month))
-        #since the first bit is paid off, we diverge 100% of overpayment to 2nd loan
+        #since the first bit is paid off, we diverge 100\% of overpayment to 2nd loan
         perc_overpay1[month+1:length(perc_overpay1)] <- 0
         perc_overpay2[month+1:length(perc_overpay2)] <- 1
         #we suppose that the whole base payment is reversed onto other part of loan going forward.
@@ -407,7 +407,7 @@ interest_paid_splitloan_diffterm_vectorised <-  function(rate = rep(0.0154,month
 #' variable including month, monthly_payment, overpayment, monthly_payment_tot, interest_paid,
 #' interest_paid_tot and capital
 #'
-#' @param rate double, the mortgage current rate (absolute value e.g. 1.5% means rate = 0.015)
+#' @param rate double, the mortgage current rate (absolute value e.g. 1.5\% means rate = 0.015)
 #' @param capital double, the mortgage remaining capital
 #' @param term_months integer, number of months remaining to pay the mortgage back without overpayments
 #' @param month_num integer, duration of payment period considered, in months
@@ -416,7 +416,9 @@ interest_paid_splitloan_diffterm_vectorised <-  function(rate = rep(0.0154,month
 #' hence 1:month_num (default value) will mean overpayment for the whole payment period considered
 #' @param reduce_term boolean, defaults to TRUE do overpayments reduce terms
 #'
-#' @return
+#' @return  dataframe with each observation being one month and
+#' variable including month, monthly_payment, overpayment, monthly_payment_tot, interest_paid,
+#' interest_paid_tot and capital
 #' @export
 #'
 mortgage_state_allmonths <- function(rate,
@@ -441,7 +443,7 @@ mortgage_state_allmonths <- function(rate,
     if (!reduce_term) {
       m_p <- monthly_payment(rate, capital, term_months)
     }
-    month_overpay_act <- month_overpay * if_else(is.na(month_overpay_nums[month]),0,1)
+    month_overpay_act <- month_overpay * dplyr::if_else(is.na(month_overpay_nums[month]),0,1)
     m_p_actual <- m_p + month_overpay_act
     m_i_p <- monthly_interest_paid(rate,capital)
     m_i_p_tot <- m_i_p_tot + m_i_p
@@ -451,7 +453,7 @@ mortgage_state_allmonths <- function(rate,
       m_p_actual <- c_p + m_i_p
     }
     capital <- capital - c_p
-    output <- output %>% bind_rows(c(month = month,
+    output <- output %>% dplyr::bind_rows(c(month = month,
                                      monthly_payment = m_p,
                                      overpayment = month_overpay_act,
                                      monthly_payment_tot = m_p_actual,
@@ -472,13 +474,15 @@ mortgage_state_allmonths <- function(rate,
 #' @description actual duration of mortgage which will either be equal to term_months or less
 #' in the case that there is overpaymnets
 #'
-#' @param rate double, the mortgage current rate (absolute value e.g. 1.5% means rate = 0.015)
+#' @param rate double, the mortgage current rate (absolute value e.g. 1.5\% means rate = 0.015)
 #' @param capital double, the mortgage remaining capital
 #' @param term_months integer, number of months remaining to pay the mortgage back
 #' @param month_overpay integer, amount overpaid each month, defaults to 0
-#' @param month_overpay_nums integer,
+#' @param month_overpay_nums vector, with index having non NA values will result in overpayment being applied for that month.
+#' hence 1:month_num (default value) will mean overpayment for the whole payment period considered
 #'
-#' @return
+#'
+#' @return integer actual duration of mortgage in months
 #' @export
 #'
 actual_term_months <- function(rate,
@@ -496,13 +500,15 @@ actual_term_months <- function(rate,
 #' @description number of months removed from the mortgage duration compared to the case
 #' where there is no overpayments
 #'
-#' @param rate double, the mortgage current rate (absolute value e.g. 1.5% means rate = 0.015)
+#' @param rate double, the mortgage current rate (absolute value e.g. 1.5\% means rate = 0.015)
 #' @param capital double, the mortgage remaining capital
 #' @param term_months integer, number of months remaining to pay the mortgage back
 #' @param month_overpay integer, amount overpaid each month, defaults to 0
-#' @param month_overpay integer, amount overpaid each month, defaults to 0_nums
+#' @param month_overpay_nums vector, with index having non NA values will result in overpayment being applied for that month.
+#' hence 1:month_num (default value) will mean overpayment for the whole payment period considered
 #'
-#' @return
+#'
+#' @return integer number of months removed from the mortgage duration
 #' @export
 #'
 total_term_reduction_months <- function(rate,
@@ -525,16 +531,16 @@ total_term_reduction_months <- function(rate,
 
 #' @title price_fixedterm
 #'
-#' @description calculated the price of a fixed term of a mortgage
+#' @description calculates the price of a fixed term of a mortgage
 #'
-#' @param rate double, the mortgage current rate (absolute value e.g. 1.5% means rate = 0.015)
+#' @param rate double, the mortgage current rate (absolute value e.g. 1.5\% means rate = 0.015)
 #' @param capital double, the mortgage remaining capital
 #' @param term_months integer, number of months remaining to pay the mortgage back
 #' @param duration_years integer, duration of fixed term in years
 #' @param fee double, the mortgage upfront fee
 #' @param rest integer, defaults to 12 for monthly payments
 #'
-#' @return
+#' @return double price of fixed term
 #' @export
 #'
 price_fixedterm <- function(rate, capital, term_months,duration_years, fee = 0,rest = 12) {

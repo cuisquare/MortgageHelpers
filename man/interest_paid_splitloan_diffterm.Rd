@@ -16,7 +16,11 @@ interest_paid_splitloan_diffterm(
 )
 }
 \arguments{
-\item{rate}{double, the mortgage current rate (absolute value e.g. 1.5% means rate = 0.015)}
+\item{rate}{double, the mortgage current rate (absolute value e.g. 1.5\% means rate = 0.015)}
+
+\item{capital1}{double, the mortgage remaining capital1}
+
+\item{capital2}{double, the mortgage remaining capital2}
 
 \item{term_months1}{integer, number of months remaining to pay the 1st mortgage back}
 
@@ -27,8 +31,6 @@ interest_paid_splitloan_diffterm(
 \item{month_overpay}{integer, amount overpaid each month, defaults to 0}
 
 \item{perc_overpay1}{percentage of overpay dedicated to first loan}
-
-\item{capital}{double, the mortgage remaining capital2}
 }
 \value{
 named list reflecting state of both mortgage, with members capital1, capital2, act_month1, act_month2, int_paid1, int_paid2, int_paid

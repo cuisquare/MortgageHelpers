@@ -7,7 +7,7 @@
 monthly_payment(rate, capital, term_months, rest = 12)
 }
 \arguments{
-\item{rate}{double, the mortgage current rate (absolute value e.g. 1.5% means rate = 0.015)}
+\item{rate}{double, the mortgage current rate (absolute value e.g. 1.5\% means rate = 0.015)}
 
 \item{capital}{double, the mortgage remaining capital}
 
@@ -16,7 +16,7 @@ monthly_payment(rate, capital, term_months, rest = 12)
 \item{rest}{integer, defaults to 12 for monthly payments}
 }
 \value{
-
+double monthly payment
 }
 \description{
 monthly payment for a classic mortgage
