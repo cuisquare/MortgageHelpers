@@ -1,7 +1,7 @@
 Package: MortgageHelpers
 Type: Package
 Title: Provide mortgage calculation helpers
-Version: 0.1.0
+Version: 0.2.0
 Author: Who wrote it
 Maintainer: The package maintainer <yourself@somewhere.net>
 Description: functions to calculate aspects of a mortgage includingg
