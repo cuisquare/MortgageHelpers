@@ -6,6 +6,6 @@
 \alias{MortgageHelpers-package}
 \title{MortgageHelpers: Provide mortgage calculation helpers}
 \description{
-functions to calculate aspects of a mortgage includingg monthly payments, total terms and interest.
+functions to calculate aspects of a mortgage including monthly payments, total terms and interest.
 }
 \keyword{internal}

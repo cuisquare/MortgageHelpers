@@ -453,7 +453,7 @@ mortgage_state_allmonths <- function(rate,
       m_p_actual <- c_p + m_i_p
     }
     capital <- capital - c_p
-    output <- output %>% dplyr::bind_rows(c(month = month,
+    output <- dplyr::bind_rows(output,c(month = month,
                                      monthly_payment = m_p,
                                      overpayment = month_overpay_act,
                                      monthly_payment_tot = m_p_actual,

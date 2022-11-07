@@ -1,0 +1,74 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# MortgageHelpers
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of MortgageHelpers is to provide functions to calculate aspects of a 
+mortgage including monthly payments, total terms and interest
+
+## Installation
+
+You can install the development version of MortgageHelpers from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("cuisquare/MortgageHelpers")
+```
+
+## Example
+
+You can get the monthly payments for a mortgage as follows:
+
+```{r example}
+library(MortgageHelpers)
+monthly_payment(rate = 0.015,
+                capital = 360000,
+                term_months = 30*12
+                )
+```
+You can also go for the whole mortgage details.
+
+```{r wholelifemortgage}
+mortgage_first5years <- mortgage_state_allmonths(rate = 0.015,
+                         capital = 360000,
+                         term_months = 30*12,
+                         month_num = 30*12)
+```
+
+
+You can then plot the various variables. 
+
+```{r wholelifemortgagecapitalplot, echo = FALSE}
+
+plot(x = mortgage_first5years$month,
+     y = mortgage_first5years$capital,
+     xlab = "month",
+     ylab = "capital",
+     main = "capital during mortgage")
+
+```
+
+```{r wholelifemortgageinterestplot, echo = FALSE}
+
+plot(x = mortgage_first5years$month,
+     y = mortgage_first5years$interest_paid,
+     xlab = "month",
+     ylab = "monthly interest",
+     main = "monthly interest during mortgage")
+
+```
