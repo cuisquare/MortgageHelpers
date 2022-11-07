@@ -44,16 +44,17 @@ monthly_payment(rate = 0.015,
 You can also go for the whole mortgage details.
 
 ```{r wholelifemortgage}
-mortgage_first5years <- mortgage_state_allmonths(rate = 0.015,
-                         capital = 360000,
-                         term_months = 30*12,
-                         month_num = 30*12)
+mortgage_first5years <- mortgage_state_allmonths(
+  rate = 0.015,
+  capital = 360000,
+  term_months = 30*12,
+  month_num = 30*12)
 ```
 
 
 You can then plot the various variables. 
 
-```{r wholelifemortgagecapitalplot, echo = FALSE}
+```{r wholelifemortgagecapitalplot}
 
 plot(x = mortgage_first5years$month,
      y = mortgage_first5years$capital,
@@ -63,7 +64,7 @@ plot(x = mortgage_first5years$month,
 
 ```
 
-```{r wholelifemortgageinterestplot, echo = FALSE}
+```{r wholelifemortgageinterestplot}
 
 plot(x = mortgage_first5years$month,
      y = mortgage_first5years$interest_paid,
