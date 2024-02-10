@@ -2,7 +2,7 @@
 % Please edit documentation in R/Functions.R
 \name{actual_term_months}
 \alias{actual_term_months}
-\title{actual_term_month}
+\title{actual_term_months}
 \usage{
 actual_term_months(
   rate,

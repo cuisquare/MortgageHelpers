@@ -469,7 +469,7 @@ mortgage_state_allmonths <- function(rate,
 }
 
 
-#' @title actual_term_month
+#' @title actual_term_months
 #'
 #' @description actual duration of mortgage which will either be equal to term_months or less
 #' in the case that there is overpaymnets
